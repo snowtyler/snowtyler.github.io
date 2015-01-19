@@ -1,0 +1,43 @@
+/**
+* Demo settings
+*/
+body { margin: 0; background: #fff; font-family: 'Roboto'; font-weight: 300; }
+h1 { font-weight: 300; text-align: center; }
+h2 { font-size: 1.16em; text-align: center; font-family: 'Roboto' font-weight: 500; margin-top: 25px; margin-bottom: 5px; }
+h1 .secondary-text { font-size: .6em; }
+p { text-align: center; }
+button { display: block; padding: 8px 6px; margin: 1em; width: 10em; font-size: 1em; text-transform: uppercase; }
+.buttons-wrapper { display: flex; justify-content: center; }
+.colored-btn { color: rgb(66, 133, 244); }
+button.floated {  }
+
+/* End demo */
+
+
+
+[material] { position: relative; overflow: hidden;  text-align: center; border: none; background: none; }
+[material][disabled] { background: rgb(234, 234, 234); }
+ 
+[material][primary] { background: #cecece; width: 56px; height: 56px; -webkit-clip-path: circle(32px at 32px 32px); clip-path: circle(32px at 32px 32px); line-height: 32px; border-radius: 50%; font-size: 24px; }
+[material][raised] { border-radius: 3px; }
+[material][raised]:not([disabled]) { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23); 
+transition: .3s all ease-in-out; background: #dfdfdf;
+}
+[material][raised]:not([disabled]):hover,
+[material][raised]:not([disabled]):active
+{ box-shadow: 0 14px 14px rgba(0, 0, 0, 0.25), 0 10px 5px rgba(0, 0, 0, 0.22); }
+
+[material][raised][colored] { color: #fff; background: #4285f4; }
+
+[material][secondary] { background: #cecece; width: 40px; height: 40px; -webkit-clip-path: circle(40px at 20px 20px); clip-path: circle(40px at 20px 20px); line-height: 16px; border-radius: 50%; font-size: 18px; }
+[material]:focus { outline: none; }
+
+.ripple { display: block; position: absolute; background: rgba(0,0,0,.1); border-radius: 100%; -webkit-transform: scale(0); transform: scale(0); }
+/*animation effect*/
+.ripple.animate { -webkit-animation: ripple 0.65s linear; animation: ripple 0.65s linear; }
+
+@-webkit-keyframes ripple {
+	100% {opacity: 0; -webkit-transform: scale(2.5); transform: scale(2.5);}
+}
+@keyframes ripple { 100% {opacity: 0; -webkit-transform: scale(2.5); transform: scale(2.5);}
+}

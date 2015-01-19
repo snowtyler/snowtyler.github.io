@@ -1,33 +1,66 @@
-// Ripple-effect animation
-(function($) {
-    $(".ripple-effect").click(function(e){
-        var rippler = $(this);
+/**
+ * Helper function, that allows to attach multiple events to selected objects
+ * @param {[object]}   el       [selected element or elements]
+ * @param {[type]}   events   [DOM object events like click or touch]
+ * @param {Function} callback [Callback method]
+ */
+var addMulitListener = function(el, events, callback) {
+  // Split all events to array
+  var e = events.split(' ');
+  
+    // Loop trough all elements
+    Array.prototype.forEach.call(el, function(element, i) {
+      // Loop trought all events and add event listeners to each
+      Array.prototype.forEach.call(e, function(event, i) {
+        element.addEventListener(event, callback, false);
+      });  
+    });
+}  ;
 
-        // create .ink element if it doesn't exist
-        if(rippler.find(".ink").length == 0) {
-            rippler.append("<span class='ink'></span>");
-        }
+/**
+ * This function is adding ripple effect to elements
+ * @param  {[object]} e [DOM objects, that should apply ripple effect]
+ * @return {[null]}   [description]
+ */
+addMulitListener(document.querySelectorAll('[material]'), 'click touchstart', function(e) { 
+    var ripple = this.querySelector('.ripple');
+    var eventType = e.type;
+    /**
+     * Ripple
+     */
+    if(ripple == null) {
+      // Create ripple
+      ripple = document.createElement('span'); 
+      ripple.classList.add('ripple');
+      
+      // Prepend ripple to element
+      this.insertBefore(ripple, this.firstChild);
 
-        var ink = rippler.find(".ink");
+      // Set ripple size
+      if(!ripple.offsetHeight && !ripple.offsetWidth) {
+        var size = Math.max(e.target.offsetWidth, e.target.offsetHeight);
+        ripple.style.width = size + 'px';
+        ripple.style.height = size + 'px';
+      }
 
-        // prevent quick double clicks
-        ink.removeClass("animate");
+    }
 
-        // set .ink diametr
-        if(!ink.height() && !ink.width())
-        {
-            var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
-            ink.css({height: d, width: d});
-        }
+    // Remove animation effect
+    ripple.classList.remove('animate');
 
-        // get click coordinates
-        var x = e.pageX - rippler.offset().left - ink.width()/2;
-        var y = e.pageY - rippler.offset().top - ink.height()/2;
+    // get click coordinates by event type
+    if(eventType == 'click') {
+      var x = e.pageX;
+      var y = e.pageY;
+    } else if(eventType == 'touchstart') {
+      var x = e.changedTouches[0].pageX;
+      var y = e.changedTouches[0].pageY;
+    }
+    x = x - this.offsetLeft - ripple.offsetWidth / 2;
+    y = y - this.offsetTop - ripple.offsetHeight / 2;
 
-        // set .ink position and add class .animate
-        ink.css({
-          top: y+'px',
-          left:x+'px'
-        }).addClass("animate");
-    })
-})(jQuery);
+    // set new ripple position by click or touch position
+    ripple.style.top = y + 'px';
+    ripple.style.left = x + 'px';
+    ripple.classList.add('animate');
+});   
