@@ -7,7 +7,8 @@
     <link rel="import" href="elements/my-element.html">
     <link rel="stylesheet" href="material_nav/material_nav.css" />
       
-    <script type="text/javascript" src="material_nav/material_nav.js"></script> 
+    <script type="text/javascript" src="material_nav/material_nav.js"></script>
+    <script src="dist/expandjs.min.js"></script>  
   </head>
   <body>
     <!-- 3. Declare the element by its tag. -->
@@ -21,6 +22,8 @@
         </div>
     </div>
     <div class="content">
+        <mat-button label="{{localize('close', shared.locale)}}"></mat-button>
+        <mat-button label="{{localize('open', shared.locale)}}"></mat-button>
     </div>
   </body>
 </html>
