@@ -4,6 +4,28 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Starter Template - Materialize</title>
+    
+    <style>
+		/* This only works with JavaScript, 
+		   if it's not present, don't show loader */
+		.no-js #loader { display: none;  }
+		.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+	</style>
+	
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	
+	
+	<script src="https://github.com/Modernizr/Modernizr/raw/master/modernizr.js"></script>
+	<script>
+		// Wait for window load
+		$(window).load(function() {
+			// Animate loader off screen
+			$("#loader").animate({
+				top: -200
+			}, 1500);
+		});
+	</script>	
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,6 +50,9 @@
       <br><br>
       <h1 class="header center orange-text">Starter Template</h1>
       <div class="row center">
+        <svg id="loader" class="circular" height="50" width="50">
+          <circle class="path" cx="25" cy="25.2" r="19.9" fill="none" stroke-width="6" stroke-miterlimit="10" />
+        </svg>
         <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
       </div>
       <div class="row center">
