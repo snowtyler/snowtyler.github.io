@@ -29,6 +29,11 @@ p {
     width: 100%;
   }
 
+
+nav .brand-logo {
+  font-family: "Product-Sans" !important
+}
+
 @font-face{
   font-family: "Product-Sans";
   src: url('fonts/Product-Sans.ttf');
