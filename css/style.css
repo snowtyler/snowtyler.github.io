@@ -29,16 +29,6 @@ p {
     width: 100%;
   }
 
-
-nav .brand-logo {
-  font-family: "Product-Sans" !important
-}
-
-@font-face{
-  font-family: "Product-Sans";
-  src: url('fonts/Product-Sans.ttf');
-}
-
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
