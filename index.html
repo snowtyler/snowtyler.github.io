@@ -109,24 +109,24 @@
 
                   <!-- Modal Structure -->
                 
-                <form method="post" action="index.php">
+                <form action="https://formspree.io/snowtyler15@gmail.com" method="POST">
                   <div id="modal1" class="modal modal-fixed-footer">
                     <div class="modal-content">
                       <div class="row">
                         <form class="col s12">
                           <div class="row">
                             <div class="input-field col s6">
-                              <input id="first_name" type="text" class="validate">
+                              <input id="first_name" type="text" class="validate" name="first_name">
                               <label for="first_name">First Name</label>
                             </div>
                             <div class="input-field col s6">
-                              <input id="last_name" type="text" class="validate">
+                              <input id="last_name" type="text" class="validate" name="last_name">
                               <label for="last_name">Last Name</label>
                             </div>
                           </div>
                           <div class="row">
                             <div class="input-field col s12">
-                              <input id="email" type="email" class="validate">
+                              <input id="email" type="email" class="validate" name="email">
                               <label for="email" data-error="Invalid address.">Your Email</label>
                             </div>
                           </div>
@@ -134,7 +134,7 @@
                             <form class="col s12">
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                  <textarea id="textarea1" class="materialize-textarea" name="textarea"></textarea>
                                   <label for="textarea1">Message</label>
                                 </div>
                               </div>
@@ -144,7 +144,8 @@
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Send</a>
+                      <input type="submit" name="submit" class="modal-action modal-close waves-effect waves-green btn-flat" name="submit"></input>
+                      <input type="hidden" name="_next" value="//site.io/thanks.html" />
                       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Discard</a>
                     </div>
                   </div>
