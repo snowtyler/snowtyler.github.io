@@ -30,13 +30,11 @@
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
         <h1 class="header center teal-text text-lighten-2">Tyler's Portfolio</h1>
         <div class="row center">
           <h5 class="header col s12 light">Your go-to website for my personal projects.</h5>
+          <h5 class="header col s12 light">Below, you'll find some of them.</h5>
         </div>
-        <br><br>
-
       </div>
     </div>
     <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
@@ -70,7 +68,6 @@
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">Easy to work with</h5>
-
             <p class="light">I've done my best to make sure the site is easy to navigate and looks appealing. Try it out!</p>
           </div>
         </div>
@@ -79,16 +76,16 @@
     </div>
   </div>
 
-
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <strong class="header col s12">English 12</strong>
-          <h5 class="header col s12 light">Quarter 1 Assessment</h5>
-          <h5 class="header col s12 light">Leadership and The Power of Story</h5>
+          <h2 class="header col s12"><i class="small material-icons">mode_edit</i> English 12</h2>
+          <h3 class="header col s12 light">Quarter 1 Assessment</h5>
+          <h4 class="header col s12 light">Leadership and The Power of Story</h5>
+            <div class="row center"><br></div>
             <div class="row center">
-              <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Read</a>
+              <a class="waves-effect waves-light btn" href="https://goo.gl/YE6JL5" target="_blank"><i class="material-icons left">description</i>Read it</a>
             </div>
         </div>
       </div>
@@ -124,7 +121,9 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <i class="small material-icons black-text">info_outline</i>
+          <div class="row center"><br></div>
+          <h5 class="header col s12 light black-text">This site is still under construction. Kind of.</h5>
         </div>
       </div>
     </div>
@@ -144,6 +143,13 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <script type="text/javascript">  
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+</script>
 
   </body>
 </html>
